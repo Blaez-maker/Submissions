@@ -1,6 +1,6 @@
 ```mermaid
 stateDiagram
-    [*] --> Still
+    [*] --> [Still](https://studies.cs.helsinki.fi/exampleapp/spa)
     Still --> [*]
 
     Still --> Moving
