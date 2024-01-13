@@ -1,10 +1,5 @@
 ```mermaid
-stateDiagram
-    [*] --> (https://studies.cs.helsinki.fi/exampleapp/spa)
-    Still --> [*]
+sequenceDiagram
 
-    Still --> Moving
-    Moving --> Still
-    Moving --> Crash
-    Crash --> [*]
+Browser->>Server: https://studies.cs.helsinki.fi/exampleapp/spa
 ```
