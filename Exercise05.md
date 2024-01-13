@@ -18,4 +18,5 @@ Note right of Browser: The Browser starts executing the JavaScript code that fet
 Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
 Note over Browser,Server: 200 Status Code
 Server-->>Browser: A JSON file
+Note right of Browser: callback renders notes
 ```
