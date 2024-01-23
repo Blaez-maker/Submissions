@@ -1,0 +1,56 @@
+const App = () => {
+    const course = 'Half Stack application development'
+    const parts = [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+
+  
+  const Header = () => {
+
+    return (
+        <p>
+        Hello, the name of this course is {course}!
+        </p>
+    )
+
+  }
+
+  let sum = 0;
+
+  const Content = parts.map (courseName =>
+    <p>{courseName.name + " has " + courseName.exercises + " exercises!"}</p>)
+
+    const Total = parts.map (exerciseNum => {
+      sum += exerciseNum.exercises
+      return sum})
+
+  return (
+    <div>
+      <Header course={course}/>
+      {Content}
+      {Total}
+      </div>
+  )
+}
+
+export default App
+
+/* 
+ const Total = parts.map(exerciseNum =>
+      <p>{sum += exerciseNum.exercises}</p>)
+      
+     <Content part={part2.name} exercises={part2.exercises} />
+      <Content part={part3.name} exercises={part3.exercises} />
+      <Total total={part1.exercises + part2.exercises + part3.exercises} />
+  }*/
