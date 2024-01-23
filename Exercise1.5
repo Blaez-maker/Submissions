@@ -17,29 +17,42 @@ const App = () => {
 
   
   const Header = () => {
-
     return (
         <p>
         Hello, the name of this course is {course}!
         </p>
     )
-
   }
 
   let sum = 0;
 
-  const Content = parts.map (courseName =>
-    <p>{courseName.name + " has " + courseName.exercises + " exercises!"}</p>)
+  const Content = () => {
+    return (
+      <div>
+        <p>
+        The name of the first part is {parts[0].name} and there are {parts[0].exercises} exercises in it!
+        </p>
+        <p>
+        The name of the second part is {parts[1].name} and there are {parts[1].exercises} exercises in it!
+        </p>
+        <p>
+        The name of the last exercise is {parts[2].name} and there are {parts[2].exercises} exercises in it!
+        </p>
+      </div>
+    )
+  }
 
-    const Total = parts.map (exerciseNum => {
-      sum += exerciseNum.exercises
-      return sum})
+  const Total = () => {
+    return (
+      <p>{parts[0].exercises} + {parts[1].exercises} + {parts[2].exercises}</p>
+    )
+  } 
 
   return (
     <div>
       <Header course={course}/>
-      {Content}
-      {Total}
+      <Content parts={parts}/>
+      <Total parts={parts}/>
       </div>
   )
 }
@@ -47,6 +60,13 @@ const App = () => {
 export default App
 
 /* 
+  const Content = parts.map (courseName =>
+    <p>{courseName.name + " has " + courseName.exercises + " exercises!"}</p>)
+
+    const Total = parts.map (exerciseNum => {
+      sum += exerciseNum.exercises
+      return sum})
+
  const Total = parts.map(exerciseNum =>
       <p>{sum += exerciseNum.exercises}</p>)
       
