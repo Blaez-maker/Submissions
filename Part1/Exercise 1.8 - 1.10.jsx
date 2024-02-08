@@ -1,5 +1,17 @@
 import { useState } from 'react'
 
+const Button = (props) => (
+  <button onClick={props.handleAlignmentClick}>{props.text}</button>
+)
+
+const StatisticLine = ({stats, text}) => {
+  return(
+    <div>
+        {text} {stats}
+    </div>
+  )
+}
+
 const App = () => {
   // save clicks of each button to its own state
   const [good, setGood] = useState(0)
@@ -17,21 +29,16 @@ const App = () => {
       )
     }
     return (
-      <div>
-        good {good}<br />
-        neutral {neutral}<br />
-        bad {bad}<br />
-        all {all}<br />
-        average {(good - bad) / all}<br />
-        positive {(good / all) * 100} %<br />
+      <div> 
+        <StatisticLine text="good" stats={good} />
+        <StatisticLine text="neutral" stats={neutral} />
+        <StatisticLine text="bad" stats={bad} />
+        <StatisticLine text="all" stats={all} />
+        <StatisticLine text="average" stats={(good - bad) / all} />
+        <StatisticLine text="positive" stats={(good / all) * 100 + '%' } />
       </div>
     )
   }
-
-  const Button = ({ handleAlignmentClick, text }) => (
-      <button onClick={handleAlignmentClick}>
-        {text}
-      </button>)
 
   const setGoodClick = () => {
     const updatedGood = good + 1
@@ -56,9 +63,8 @@ const App = () => {
 
   return (
     <div>
-
+        
         <h1>give feedback</h1>
-
       <Button handleAlignmentClick={setGoodClick} text='good' />
       <Button handleAlignmentClick={setNeutralClick} text='neutral' />
       <Button handleAlignmentClick={setBadClick} text='bad' />
