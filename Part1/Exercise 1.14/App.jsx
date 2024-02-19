@@ -1,11 +1,13 @@
-
 import { useState } from 'react'
 
 const TopVote = ({anecdotes, votes}) => 
 {
   const topVoteCount = Math.max(...votes)         //gets the index with the highest number in the array
+
   const topVoteIndex = votes.indexOf(topVoteCount)
+  
   const topvote = anecdotes[topVoteIndex]         //gets the value of the highest index
+  
   if (topVoteCount === 0) {
     return (
       <p>no votes</p>)}
