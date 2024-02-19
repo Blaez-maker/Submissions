@@ -35,9 +35,9 @@ const App = () => {
   const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
 
   const handleVoteClick = () => {
-    const newAllVotes = [...votes]
-    newAllVotes[selected] += 1
-    setVotes(newAllVotes)
+    const updatedVotes = [...votes]
+    updatedVotes[selected] += 1
+    setVotes(updatedVotes)
   }
 
   const handleAnecdoteClick = () => {
