@@ -43,16 +43,15 @@ const App = () => {
       ]
     }
   ]
-  courses[1].parts[0].exercises
-  
-  const sum = courses.parts.reduce((s, p) => 
+
+  const sum = courses[0].parts.reduce((s, p) => 
     s + p.exercises, 0, 
   )
 
   const Course = ({ nomen }) => {
     return (
-          nomen.parts.map(coursesarbi => <p key={coursesarbi.id}>
-            {coursesarbi.name} {coursesarbi.exercises}</p>)
+          nomen.parts.map(coursearbi => <p key={coursearbi.id}>
+            {coursearbi.name} {coursearbi.exercises}</p>)
           )
   }
   return (
